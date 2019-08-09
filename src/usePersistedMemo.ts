@@ -3,7 +3,7 @@ import areHookInputsEqual from "./areHookInputsEqual";
 
 const UNINITIALIZED_SENTINEL: DependencyList = [];
 
-export default function usePersistentMemo<T>(
+export default function usePersistedMemo<T>(
   factory: () => T,
   deps: DependencyList
 ): T {
