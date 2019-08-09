@@ -1,0 +1,9 @@
+{
+  "name": "react-base-hooks",
+  "peerDependencies": {
+    "react": ">= 16.8.0"
+  },
+  "devDependencies": {
+    "react": "^16.9.0"
+  }
+}
