@@ -11,8 +11,5 @@
     "@types/react": "^16.9.1",
     "react": "^16.9.0",
     "typescript": "^3.5.3"
-  },
-  "dependencies": {
-    "tsconfig.json": "^1.0.6"
   }
 }
