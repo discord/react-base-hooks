@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  render,
-  fireEvent,
-  cleanup
-} from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import useForceUpdate from "../useForceUpdate";
 
 describe("useForceUpdate", () => {
@@ -15,10 +11,14 @@ describe("useForceUpdate", () => {
     const MyComponent = () => {
       const forceUpdate = useForceUpdate();
       renderMock();
-      return <button data-testid="button" onClick={forceUpdate}>Update</button>;
+      return (
+        <button data-testid="button" onClick={forceUpdate}>
+          Update
+        </button>
+      );
     };
 
-    const {getByTestId} = render(<MyComponent />);
+    const { getByTestId } = render(<MyComponent />);
     expect(renderMock).toHaveBeenCalledTimes(1);
 
     fireEvent.click(getByTestId("button"));
