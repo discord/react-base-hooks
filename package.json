@@ -1,5 +1,6 @@
 {
   "name": "react-base-hooks",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
