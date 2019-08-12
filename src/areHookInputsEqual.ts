@@ -1,13 +1,10 @@
 import { DependencyList } from "react";
 
+// https://github.com/facebook/react/blob/c2034716a5bff586ab68c41a14139a535cbd788e/packages/react-reconciler/src/ReactFiberHooks.js#L314
 export default function areHookInputsEqual(
   nextDeps: DependencyList,
   prevDeps: DependencyList
 ): boolean {
-  if (prevDeps === null) {
-    return false;
-  }
-
   if (nextDeps.length !== prevDeps.length) {
     return false;
   }

@@ -7,7 +7,7 @@ const UNINITIALIZED_SENTINEL: DependencyList = [];
  * A hook that operates just like `useMemo` but can be relied upon to return the
  * same value if deps are equal. React's useMemo can throw away the value (used
  * for performance optimization, not semantic guarantee).
- * 
+ *
  * function MyComponent() {
  *   // Because deps are constant, can guarantee myValue is always same instance
  *   const myValue = usePersistedMemo(() => [], [5]);
