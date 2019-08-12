@@ -10,7 +10,7 @@ describe("useForceUpdate", () => {
 
     const MyComponent = () => {
       const forceUpdate = useForceUpdate();
-      renderMock();
+      renderMock(forceUpdate);
       return (
         <button data-testid="button" onClick={forceUpdate}>
           Update
@@ -23,5 +23,7 @@ describe("useForceUpdate", () => {
 
     fireEvent.click(getByTestId("button"));
     expect(renderMock).toHaveBeenCalledTimes(2);
+
+    expect(renderMock.mock.calls[1][0]).toBe(renderMock.mock.calls[0][0]);
   });
 });
