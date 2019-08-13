@@ -1,11 +1,11 @@
 import useForceUpdate from "./useForceUpdate";
 import usePersistedMemo from "./usePersistedMemo";
-import usePersistedValue from "./usePersistedValue";
+import useLazyValue from "./useLazyValue";
 import areHookInputsEqual from "./areHookInputsEqual";
 
 export {
   useForceUpdate,
   usePersistedMemo,
-  usePersistedValue,
+  useLazyValue,
   areHookInputsEqual
 };

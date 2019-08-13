@@ -1,8 +1,8 @@
 import * as React from "react";
 import { render, cleanup } from "@testing-library/react";
-import usePersistedValue from "../usePersistedValue";
+import useLazyValue from "../useLazyValue";
 
-describe("usePersistedValue", () => {
+describe("useLazyValue", () => {
   afterEach(cleanup);
 
   it("persists the value", () => {
@@ -11,7 +11,7 @@ describe("usePersistedValue", () => {
     const renderMock = jest.fn();
 
     const MyComponent = () => {
-      const value = usePersistedValue(factory);
+      const value = useLazyValue(factory);
       renderMock(value);
       return <div />;
     };

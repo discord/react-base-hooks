@@ -12,11 +12,11 @@ const UNINITIALIZED_SENTINEL = {};
  *
  * function MyComponent() {
  *   // Can guarantee that animatedValue is always same instance
- *   const animatedValue = usePersistedValue(() => new Animated.Value());
+ *   const animatedValue = useLazyValue(() => new Animated.Value());
  *   ...
  * }
  */
-export default function usePersistedValue<T>(factory: () => T): T {
+export default function useLazyValue<T>(factory: () => T): T {
   const valueRef = useRef<T>(UNINITIALIZED_SENTINEL as T);
   if (valueRef.current === UNINITIALIZED_SENTINEL) {
     valueRef.current = factory();
