@@ -1,8 +1,8 @@
 import * as React from "react";
 import { render, cleanup } from "@testing-library/react";
-import usePersistedMemo from "../usePersistedMemo";
+import useStableMemo from "../useStableMemo";
 
-describe("usePersistedMemo", () => {
+describe("useStableMemo", () => {
   afterEach(cleanup);
 
   it("works like memo", () => {
@@ -13,7 +13,7 @@ describe("usePersistedMemo", () => {
       deps: Array<number>;
     }
     const MyComponent = ({ deps }: MyComponentProps) => {
-      const value = usePersistedMemo(() => factory(deps), deps);
+      const value = useStableMemo(() => factory(deps), deps);
       renderMock(value);
       return <div />;
     };

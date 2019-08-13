@@ -10,11 +10,11 @@ const UNINITIALIZED_SENTINEL: DependencyList = [];
  *
  * function MyComponent() {
  *   // Because deps are constant, can guarantee myValue is always same instance
- *   const myValue = usePersistedMemo(() => [], [5]);
+ *   const myValue = useStableMemo(() => [], [5]);
  *   ...
  * }
  */
-export default function usePersistedMemo<T>(
+export default function useStableMemo<T>(
   factory: () => T,
   deps: DependencyList
 ): T {
