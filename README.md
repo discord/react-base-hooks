@@ -2,15 +2,13 @@
 
 This is a collection of basic React hooks that are an extension of the React core library.
 
-## Installation
+#### Installation
 
 ```
 npm install react-base-hooks
 ```
 
-## Included hooks
-
-### useLazyValue
+## useLazyValue
 
 `useLazyValue` calls the provided factory on mount and returns this value for the duration of the component's lifecycle. See React docs on .
 
@@ -33,18 +31,18 @@ function MyComponent() {
 }
 ```
 
-**Comparison to useMemo**
+#### Comparison to useMemo
 
 You cannot rely on `useMemo` as [a semantic guarantee](https://reactjs.org/docs/hooks-reference.html#usememo). React may throw away the cached value and recall your factory even if deps did not change.
 
-**Comparison to useState**
+#### Comparison to useState
 
 You can get the same result using `useState(factory)[0]`, but it's a little more expensive supporting unused update functionality.
 
-**Comparison to useRef**
+#### Comparison to useRef
 You can implement this yourself as described in React doc's [how to create expensive objects lazily](https://reactjs.org/docs/hooks-faq.html#how-to-create-expensive-objects-lazily). However, `useLazyValue` is likely more convenient and hides the `ref.current` implementation detail.
 
-### useForceUpdate
+## useForceUpdate
 
 Provides the same functionality as `forceUpdate` in React class components. Useful when your component relies on data outside React's purview (external data or refs).
 
@@ -57,7 +55,7 @@ function MyComponent() {
 }
 ```
 
-### useStableMemo
+## useStableMemo
 
 Just like `useMemo` but is guaranteed to return the same value if provided deps don't change.
 
