@@ -10,7 +10,7 @@ npm install react-base-hooks
 
 ## useLazyValue
 
-`useLazyValue` calls the provided factory on mount and returns this value for the duration of the component's lifecycle. See React docs on .
+`useLazyValue` calls the provided factory on mount and returns this value for the duration of the component's lifecycle. See React docs on [creating expensive objects lazily](https://reactjs.org/docs/hooks-faq.html#how-to-create-expensive-objects-lazily).
 
 ```js
 import {useLazyValue} from 'react-base-hooks';
